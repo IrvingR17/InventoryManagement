@@ -1,0 +1,19 @@
+﻿@model ComputerModel
+
+<h2>Detalles del Equipo</h2>
+
+<div>
+    <h4>Id: @Html.DisplayFor(model => model.Id)</h4>
+    <h4>Usuario: @Html.DisplayFor(model => model.User)</h4>
+    <h4>Departamento: @Html.DisplayFor(model => model.Department)</h4>
+    <h4>Tipo: @Html.DisplayFor(model => model.Type)</h4>
+    <h4>Modelo: @Html.DisplayFor(model => model.Model)</h4>
+    <h4>Número de Serie: @Html.DisplayFor(model => model.Serial_number)</h4>
+    <h4>Responsiva: @Html.DisplayFor(model => model.Responsive)</h4>
+    <h4>Hostname: @Html.DisplayFor(model => model.Hostname)</h4>
+    <h4>Comentarios: @Html.DisplayFor(model => model.Comments)</h4>
+    <h4>En bodega: @Html.DisplayFor(model => model.is_stored)</h4>
+</div>
+<p>
+    <a asp-action="Index" class="btn btn-primary">Volver al Listado</a>
+</p>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+<div class="container">
+    <h2>Bienvenido</h2>
+</div>
+@if (User.Identity.IsAuthenticated)
+{    
+<div class="container">
+    <h2>Inventario</h2>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            @using (Html.BeginForm("Search", "Computer", FormMethod.Get))
+            {
+                <div class="form-group">
+                    <label for="searchTerm">Buscar Equipo:</label>
+                    <input type="text" name="searchTerm" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            }
+        </div>
+        <div class="col-md-3">
+            <p>
+                <a asp-controller="Computer" asp-action="Create" class="btn btn-success">Agregar Equipo</a>
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p>
+                <a asp-controller="Computer" asp-action="Index" class="btn btn-success">Listado de equipos</a>
+            </p>
+        </div>
+    </div>
+</div>
+}

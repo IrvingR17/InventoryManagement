@@ -1,0 +1,86 @@
+@model IEnumerable<ComputerModel>
+
+    <h2>Listado de Equipos</h2>
+
+    <p>
+    <a asp-action="Create" class="btn btn-primary">Agregar Nuevo Equipo</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Usuario
+                </th>
+                <th>
+                    Departamento
+                </th>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Modelo
+                </th>
+                <th>
+                    Numero de serie
+                </th>
+                <th>
+                    Carta responsiva
+                </th>
+                <th>
+                    Hostname
+                </th>
+                <th>
+                    Comentarios
+                </th>
+                <th>
+                    En bodega
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Serial_number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Responsive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hostname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.is_stored)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>

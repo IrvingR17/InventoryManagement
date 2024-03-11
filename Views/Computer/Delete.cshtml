@@ -1,0 +1,16 @@
+﻿@model ComputerModel
+
+<h2>Eliminar Equipo</h2>
+
+<h4>¿Estás seguro de que quieres eliminar este equipo?</h4>
+<div>
+    <h4>Usuario: @Html.DisplayFor(model => model.User)</h4>
+    <h4>Modelo: @Html.DisplayFor(model => model.Model)</h4>
+    <h4>Número de Serie: @Html.DisplayFor(model => model.Serial_number)</h4>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+    <a asp-action="Index" class="btn btn-primary">Cancelar</a>
+</form>
